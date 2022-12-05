@@ -53,7 +53,7 @@ function game() {
     ) {
       playerSelection = prompt(
         "Choose a valid input: rock, paper, or scissors"
-      ).toLowerCase();
+      ).toLowerCase().trim();
     }
 
     playRound(playerSelection, computerPlay());
@@ -65,7 +65,7 @@ function game() {
       `Congrats! You beat the computer ${playerScore} out of 5 rounds!`
     );
   } else if (playerScore === computerScore) {
-    console.log("This game ended in a tie. Not bad");
+    console.log("This game ended in a tie. Not bad!");
   } else {
     console.log(
       `Oh no, the computer beat you ${computerScore} out of 5 rounds...`
