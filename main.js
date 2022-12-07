@@ -1,6 +1,6 @@
 function computerPlay() {
   let options = {1: "rock", 2: "paper", 3: "scissors"};
-
+  
   return options[Math.floor(Math.random() * 3) + 1];
 }
 
