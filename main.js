@@ -53,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  alert("welcome to rock paper or scissor game");
+  alert("welcome to the rock paper or scissor game");
   for (let i = 0; i < 5; i++){
       playRound(playerPlay(),computerPlay());
   }
