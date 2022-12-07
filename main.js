@@ -4,6 +4,18 @@ function computerPlay() {
   return options[Math.floor(Math.random() * 3) + 1];
 }
 
+function playerPlay() {
+  let playerSelection = prompt("chose rock, paper or scissor").toLowerCase().trim();
+  while (
+      playerSelection !== "rock" &&
+      playerSelection !== "paper" &&
+      playerSelection !== "scissors"
+  ) {
+      playerSelection = prompt("Choose a valid input: rock,paper or scissors");
+  }
+  return playerSelection;
+}
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -41,36 +53,21 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt(
-      "Choose rock, paper, or scissors"
-    ).toLowerCase().trim();
-
-    while (
-      playerSelection !== "rock" &&
-      playerSelection !== "paper" &&
-      playerSelection !== "scissors"
-    ) {
-      playerSelection = prompt(
-        "Choose a valid input: rock, paper, or scissors"
-      ).toLowerCase().trim();
-    }
-
-    playRound(playerSelection, computerPlay());
+  alert("welcome to rock paper or scissor game");
+  for (let i = 0; i < 5; i++){
+      playRound(playerPlay(),computerPlay());
   }
-
-
   if (playerScore > computerScore) {
-    console.log(
-      `Congrats! You beat the computer ${playerScore} out of 5 rounds!`
-    );
+      console.log(
+        `Congrats! You beat the computer ${playerScore} out of 5 rounds!`
+      );
   } else if (playerScore === computerScore) {
-    console.log("This game ended in a tie. Not bad!");
+      console.log("This game ended in a tie. good luck for next time!");
   } else {
-    console.log(
-      `Oh no, the computer beat you ${computerScore} out of 5 rounds...`
-    );
+      console.log(
+        `Oh no, the computer beat you ${computerScore} out of 5 rounds... Try again`
+      );
   }
-}    
+}
 
 game();
